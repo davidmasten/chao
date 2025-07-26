@@ -2,8 +2,7 @@ import './globals.css';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import { Toaster } from '@/components/ui/toaster';
-// 暂时注释掉Analytics以修复构建问题
-// import { Analytics } from '@vercel/analytics/next';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -22,7 +21,6 @@ export const metadata: Metadata = {
   },
 };
 
-// 构建优化版本 - 移除Analytics依赖
 export default function RootLayout({
   children,
 }: {
@@ -36,7 +34,7 @@ export default function RootLayout({
       <body className={inter.className}>
         {children}
         <Toaster />
-        {/* Analytics已移除以确保构建成功 */}
+        <SpeedInsights />
       </body>
     </html>
   );
