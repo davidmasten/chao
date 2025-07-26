@@ -22,6 +22,7 @@ export const metadata: Metadata = {
   },
 };
 
+// 构建优化版本 - 移除Analytics依赖
 export default function RootLayout({
   children,
 }: {
@@ -35,8 +36,7 @@ export default function RootLayout({
       <body className={inter.className}>
         {children}
         <Toaster />
-        {/* 暂时注释掉Analytics */}
-        {/* <Analytics /> */}
+        {/* Analytics已移除以确保构建成功 */}
       </body>
     </html>
   );
